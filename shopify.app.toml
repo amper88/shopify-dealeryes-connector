@@ -1,12 +1,13 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-name = "shopify-dealeryes-connector"
-client_id = ""
-application_url = "https://your-render-app.onrender.com"
+client_id = "d4b7e901b40c2eb0319717dd826e0da4"
+name = "dealeryes-connector"
+application_url = "https://shopify-dealeryes-connector.onrender.com"
 embedded = true
 
 [build]
 automatically_update_urls_on_dev = true
+include_config_on_deploy = true
 
 [webhooks]
 api_version = "2025-01"
@@ -46,9 +47,5 @@ scopes = "read_products,write_products,read_customers,write_customers,read_compa
 
 [auth]
 redirect_urls = [
-  "https://your-render-app.onrender.com/auth/callback",
-  "http://localhost:3457/auth/callback"
+  "https://shopify-dealeryes-connector.onrender.com/auth/callback"
 ]
-
-[app_proxy]
-# Not used — all sync goes through DealerYes API directly
