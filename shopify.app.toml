@@ -1,0 +1,54 @@
+# Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
+
+name = "shopify-dealeryes-connector"
+client_id = ""
+application_url = "https://your-render-app.onrender.com"
+embedded = true
+
+[build]
+automatically_update_urls_on_dev = true
+
+[webhooks]
+api_version = "2025-01"
+
+  # Company (Distributor)
+  [[webhooks.subscriptions]]
+  topics = ["companies/create", "companies/update", "companies/delete"]
+  uri = "/webhooks/companies"
+
+  # Company Locations (Dealers)
+  [[webhooks.subscriptions]]
+  topics = ["company_locations/create", "company_locations/update", "company_locations/delete"]
+  uri = "/webhooks/company_locations"
+
+  # Products
+  [[webhooks.subscriptions]]
+  topics = ["products/create", "products/update", "products/delete"]
+  uri = "/webhooks/products"
+
+  # Collections (Categories)
+  [[webhooks.subscriptions]]
+  topics = ["collections/create", "collections/update", "collections/delete"]
+  uri = "/webhooks/collections"
+
+  # Customers (Company Contacts / Members)
+  [[webhooks.subscriptions]]
+  topics = ["customers/create", "customers/update", "customers/delete"]
+  uri = "/webhooks/customers"
+
+  # App lifecycle
+  [[webhooks.subscriptions]]
+  topics = ["app/uninstalled"]
+  uri = "/webhooks/app/uninstalled"
+
+[access_scopes]
+scopes = "read_products,write_products,read_customers,write_customers,read_companies,write_companies,read_price_rules,write_price_rules,read_markets,write_markets,read_publications"
+
+[auth]
+redirect_urls = [
+  "https://your-render-app.onrender.com/auth/callback",
+  "http://localhost:3457/auth/callback"
+]
+
+[app_proxy]
+# Not used — all sync goes through DealerYes API directly

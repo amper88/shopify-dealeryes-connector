@@ -1,0 +1,15 @@
+node_modules/
+build/
+.cache/
+.env
+*.sqlite
+*.sqlite-journal
+prisma/migrations/
+
+# Shopify CLI
+.shopify/
+shopify.app.*.toml
+
+# OS
+.DS_Store
+Thumbs.db
