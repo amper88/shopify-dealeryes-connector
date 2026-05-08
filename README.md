@@ -62,6 +62,18 @@ To point the connector to a different DealerYes instance (e.g. production):
 
 > Note: `shopify app deploy` updates the Partner Dashboard globally — all stores using this app will be affected.
 
+## Deploying for a new Shopify organization (new Partner account)
+
+Each Shopify Partner organization requires its own app registration. Steps:
+
+1. Create a new app in the new Partner Dashboard → get new `client_id` and `client_secret`
+2. Update `shopify.app.toml` → `client_id`
+3. Update Render env vars: `SHOPIFY_API_KEY`, `SHOPIFY_API_SECRET`, and `DEALERYES_*` for the target instance
+4. Update `SHOPIFY_APP_URL` if using a new Render service
+5. Run `shopify app deploy` (logged in to the new Partner account) to register webhooks and URLs
+6. Complete the protected customer data request in the new Partner Dashboard (API access requests → Protected customer data → Select data use)
+7. Set up distribution → Custom → Generate install link for the target store
+
 ## Installing on a new store
 
 1. Partner Dashboard → dealeryes-connector → Distribution → Generate link → enter store domain
