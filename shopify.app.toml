@@ -2,12 +2,11 @@
 
 client_id = "d4b7e901b40c2eb0319717dd826e0da4"
 name = "dealeryes-connector"
-application_url = "https://shopify-dealeryes-connector.onrender.com"
+application_url = "https://shopify-dealeryes-connector.onrender.com/app"
 embedded = true
 
 [build]
 automatically_update_urls_on_dev = true
-include_config_on_deploy = true
 
 [webhooks]
 api_version = "2025-01"
