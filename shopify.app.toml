@@ -2,7 +2,7 @@
 
 client_id = "d4b7e901b40c2eb0319717dd826e0da4"
 name = "dealeryes-connector"
-application_url = "https://shopify-dealeryes-connector.onrender.com/app"
+application_url = "https://shopify-dealeryes-connector.onrender.com"
 embedded = true
 
 [build]
