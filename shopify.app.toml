@@ -21,6 +21,16 @@ api_version = "2025-01"
   topics = ["company_locations/create", "company_locations/update", "company_locations/delete"]
   uri = "/webhooks/company_locations"
 
+  # Company Contacts (Members assigned to companies/locations)
+  [[webhooks.subscriptions]]
+  topics = ["company_contacts/create", "company_contacts/delete"]
+  uri = "/webhooks/company_contacts"
+
+  # Company Contact Roles (location-specific role assignments)
+  [[webhooks.subscriptions]]
+  topics = ["company_contact_roles/assign", "company_contact_roles/revoke"]
+  uri = "/webhooks/company_contact_roles"
+
   # Products
   [[webhooks.subscriptions]]
   topics = ["products/create", "products/update", "products/delete"]
