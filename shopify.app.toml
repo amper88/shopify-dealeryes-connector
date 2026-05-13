@@ -31,6 +31,11 @@ api_version = "2025-01"
   topics = ["company_contact_roles/assign", "company_contact_roles/revoke"]
   uri = "/webhooks/company_contact_roles"
 
+  # Catalogs (B2B price catalogs → DY Brands)
+  [[webhooks.subscriptions]]
+  topics = ["catalogs/create", "catalogs/update", "catalogs/delete"]
+  uri = "/webhooks/catalogs"
+
   # Products
   [[webhooks.subscriptions]]
   topics = ["products/create", "products/update", "products/delete"]
